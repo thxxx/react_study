@@ -1,8 +1,17 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
-export default function MyPage() {
-    return (<View style={styles.main}><Text>MyPage</Text></View>)
+export default function MyPage({ navigation }) {
+    const goSignIn = () => {
+        navigation.navigate('SignInPage');
+    };
+    return (
+        <View style={styles.main}>
+            <TouchableOpacity onPress={goSignIn}>
+                <Text>로그인 하러가기</Text>
+            </TouchableOpacity>
+            <Text>MyPage</Text>
+        </View>)
 }
 
 const styles = StyleSheet.create({

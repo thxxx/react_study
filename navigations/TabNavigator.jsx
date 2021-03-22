@@ -31,12 +31,14 @@ const TabNavigator = ({ navigation, route }) => {
                     } else if (route.name === 'MyPage') {
                         iconName += 'person';
                     }
-                    return <Ionicons
-                        name={iconName}
-                        color={focused ? 'hotpink' : 'grey'} // focused가 클릭된건지 아닌지??! 삼항연산자
-                        size={26}
-                    />
-                }
+                    //리턴으로 아이콘 보여준다
+                    return (
+                        <Ionicons
+                            name={iconName}
+                            color={focused ? 'hotpink' : 'grey'} // focused가 클릭된건지 아닌지??! 삼항연산자
+                            size={26}
+                        />
+                    )}
             })}
             // 스크린옵션과 탭바옵션은 따로.
             tabBarOptions={{
