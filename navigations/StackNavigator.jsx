@@ -36,11 +36,9 @@ const StackNavigator = () => {
             \
             이거 순서대로 나온다!!!!*/}
 
+            <Stack.Screen name="TabNavigator" component={TabNavigator} />
             <Stack.Screen name="SignInPage" component={SignInPage} />
             <Stack.Screen name="SignUpPage" component={SignUpPage} />
-
-            <Stack.Screen name="TabNavigator" component={TabNavigator} />
-
             <Stack.Screen name="DetailPage" component={DetailPage} />
         </Stack.Navigator>
     );

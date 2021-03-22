@@ -10,6 +10,9 @@ export default function SignInPage({ navigation }) {
     const goSignUp = () => {
         navigation.navigate('SignUpPage');
     };
+    const goMain = () => {
+        navigation.navigate('navigation.MainPage');
+    };
     return (
         <Container style={styles.container}>
             <ImageBackground source={bImage} style={styles.backgroundImage}>
@@ -18,7 +21,7 @@ export default function SignInPage({ navigation }) {
                         <Text style={styles.highlite}>we</Text>gram
                       </Text>
                     <Form style={styles.form}>
-                        <ItemInput title={'이메일'} /> {/* 원래대로면 아래인 코드를 컴포넌트화를 통해서 재사용한다. */}
+                        <ItemInput title={'이메일'} />
                         <Item floatingLabel last>
                             <Label style={styles.label}>비밀번호</Label>
                             <Input style={styles.input} />
@@ -32,6 +35,9 @@ export default function SignInPage({ navigation }) {
                     </Button>
                     <Button full style={styles.emailSignUp} onPress={goSignUp}>
                         <Text style={{ color: '#333' }}>회원가입</Text>
+                    </Button>
+                    <Button full style={styles.emailSignUp} onPress={goMain}>
+                        <Text style={{ color: '#333' }}>메인</Text>
                     </Button>
                 </Content>
             </ImageBackground>

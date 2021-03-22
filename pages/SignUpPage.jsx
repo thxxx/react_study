@@ -18,14 +18,22 @@ import {
 const bImage = require('../assets/background.png');
 import ItemInput from '../components/ItemInput';
 
-export default function SignUpPage({navigation}) {
+
+// transparent의 기능이 뭐지?
+//
+//
+//
+//
+
+
+export default function SignUpPage({ navigation }) {
   return (
     <Container style={styles.container}>
       <ImageBackground source={bImage} style={styles.backgroundImage}>
-        <Header transparent> {/* transparent 속성의 기능은 뭘까?? */}
+        <Header transparent>
           <Left>
-            <Button transparent 
-							onPress={() => {
+            <Button transparent
+              onPress={() => {
                 navigation.goBack();
               }}>
               <Icon name="arrow-back" style={{ color: '#fff' }} />
