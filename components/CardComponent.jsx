@@ -4,15 +4,16 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 import { Icon, Text, Card, CardItem } from 'native-base';
 const image = require('../assets/background2.png');
 const logo = require('../assets/logo.png');
-
 import ImageBlurLoading from 'react-native-image-blur-loading';
-//이미지 블러 로딩 사용
 
-export default function CardComponent({ navigation }) {
+export default function CardComponent({ navigation, content }) {
+
     return (
         <TouchableOpacity
             onPress={() => {
-                navigation.navigate('DetailPage');
+                navigation.navigate('DetailPage', {
+                    content: content  // 이게 맞다고오오오오???
+                });
             }}
             style={styles.container}
         >
@@ -20,8 +21,8 @@ export default function CardComponent({ navigation }) {
                 <CardItem transparent>
                     <ImageBlurLoading
                         withIndicator
-                        thumbnailSource={image}
-                        source={image}
+                        thumbnailSource={{ uri: content.image }}
+                        source={{ uri: content.image }}
                         style={styles.image}
                     />
                 </CardItem>
@@ -29,11 +30,9 @@ export default function CardComponent({ navigation }) {
                     <Grid>
                         <Col size={9}>
                             <Text numberOfLines={1} style={styles.title}>
-                                제목이 쓰여요
-              </Text>
-                            <Text style={[styles.grey, styles.writer]}>
-                                스파르타코딩 클럽
-              </Text>
+                                {content.title}
+                            </Text>
+                            <Text style={[styles.grey, styles.writer]}>{content.author}</Text>
                         </Col>
                         <Col size={2}>
                             <Grid>

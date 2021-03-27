@@ -7,7 +7,7 @@ const logo = require('../assets/logo.png');
 export default function HeaderComponent() {
     return (
         <Header transparent>
-            <Left style={{ backgroundColor: 'purple' }}>
+            <Left style={{ backgroundColor: 'green' }}>
                 <Button transparent>
                     <Image source={logo} style={styles.logoImage} />
                 </Button>

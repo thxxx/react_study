@@ -5,7 +5,8 @@ import { Container, Content, Icon, Text } from 'native-base';
 import CardComponent from '../components/CardComponent';
 import HeaderComponent from '../components/HeaderComponent';
 
-const data = require('../data.json');
+const data = require('../data.json'); // json에서 데이터를 가져왔다.
+
 export default function MainPage({ navigation }) {
     return (
         <Container>
@@ -29,7 +30,7 @@ export default function MainPage({ navigation }) {
                             <CardComponent
                                 content={content}
                                 key={i}
-                                navigation={navigation}
+                                navigation={navigation} // 가져온 데이터를 카드 컴포넌트로 넘겨서 화면에 띄운다.
                             />
                         );
                     })}
