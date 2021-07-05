@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
+import useAxios from './useAxios';
 /*
 사용자가 버튼을 클릭하면 진짜 할거니? 라고 물어보는 useConfirm
 */
@@ -58,6 +59,8 @@ const App = () => {
     const confirmDelete = useConfirm("Are you sure you want to delete", deleteWorld, abort); 
     
     const {enablePreventLeave, disablePreventLeave} = usePreventLeave();
+
+    const request = useAxios({url:"https://yts.am/api/v2/list_movies.json"});
     return (
         <div className="App">
             <button onClick={confirmDelete}>Delete the world</button>
