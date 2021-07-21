@@ -60,7 +60,6 @@ const App = () => {
     
     const {enablePreventLeave, disablePreventLeave} = usePreventLeave();
 
-    const request = useAxios({url:"https://yts.am/api/v2/list_movies.json"});
     return (
         <div className="App">
             <button onClick={confirmDelete}>Delete the world</button>
