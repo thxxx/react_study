@@ -17,3 +17,29 @@
 // reportWebVitals();
 
 
+const plus = document.getElementById("add");
+const minus = document.getElementById("sub");
+const number = document.querySelector("span");
+
+let count = 1;
+
+updateText();
+
+const updateText = () => {
+    number.innerText = count;
+}
+
+const handleAdd = () => {
+    console.log("add");
+    count += 1;
+    updateText();
+}
+
+const handelMinus = () => {
+    console.log("minus");
+    count -= 1;
+    updateText();
+}
+
+plus.addEventListener("click", handleAdd);
+minus.addEventListener("click", handelMinus);
